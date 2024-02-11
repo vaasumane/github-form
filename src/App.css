@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
+:root{
+  --primary-bg-color:#040d21;
+  --secondary-bg-color:#0c162d;
+  --primary-text-color:#8193b2;
+  --secondary-text-color:#00cfc8;
+  --text-white:#fff;
+  --btn-txt-color:#627597;
+  --input-hover-color:#0969da;
+}
+/* Global Css Start */
+body {
+  background-color:var(--primary-bg-color)!important;
+  color: var(--text-white)!important;
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace !important;
+}
+.text-gray-light-mktg{
+  color: var(--primary-text-color) !important;
+}
+.signup-text-prompt{
+  color:var(--secondary-text-color) ;
+}
+.color-fg-on-emphasis, .fgColor-onEmphasis {
+  color: var(--text-white) !important;
+}
+.pt-12{
+  padding-top: 8rem;
+}
+.card-bg-color{
+  background-color: var(--secondary-bg-color)!important;
+  border: 1px solid #202637;
+  color: var(--primary-text-color)!important;
+}
+.l-45{
+  left: 45%;
+}
+/* Global Css End */
+/* Main Background Start */
+.signup-space, .signup-stars {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.signup-stars {
+  background-image: radial-gradient(2px 2px at 50px 200px, #eee, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)), radial-gradient(3px 4px at 120px 40px, #ddd, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 250px 250px;
+  opacity: 0.5;
+  animation: snow 10s infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes snow {
+  0% {
+    transform: translate(-500px, -500px) scale(1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.signup-stars:nth-child(1) {
+  background-position: 10% 90%;
+  background-position-x: 10%;
+  background-position-y: 90%;
+  animation-delay: 0s;
 }
 
-.App-link {
-  color: #61dafb;
+.signup-stars:nth-child(2) {
+  background-position: 20% 50%;
+  background-position-x: 20%;
+  background-position-y: 50%;
+  background-size: 270px 500px;
+  animation-delay: .3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.signup-stars:nth-child(3) {
+  background-position: 40% -80%;
+  background-position-x: 40%;
+  background-position-y: -80%;
+  animation-delay: 1.2s;
 }
+
+.signup-stars:nth-child(4) {
+  background-position: -20% -30%;
+  background-position-x: -20%;
+  background-position-y: -30%;
+  transform: rotate(60deg);
+  animation-delay: 2.5s;
+}
+
+.signup-stars:nth-child(5) {
+  background-image: radial-gradient(2px 2px at 10px 100px, #eee, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 20px 10px, #fff, rgba(0, 0, 0, 0)), radial-gradient(3px 4px at 150px 40px, #ddd, rgba(0, 0, 0, 0));
+  background-position: 80% 30%;
+  background-position-x: 80%;
+  background-position-y: 30%;
+  animation-delay: 4s;
+}
+
+.signup-stars:nth-child(6) {
+  background-position: 50% 20%;
+  background-position-x: 50%;
+  background-position-y: 20%;
+  animation-delay: 6s;
+}
+.typewriter p{
+  border-right: solid 3px var(--primary-text-color);
+  white-space: nowrap;
+  overflow: hidden;    
+  font-family: 'Source Code Pro', monospace;  
+  color: var(--primary-text-color);
+}
+
+.typewriter p:nth-child(1) {
+  width: 11.3em;
+  animation: type 2s steps(60, end); /* Decreased from 3s to 2s */
+  animation-fill-mode: forwards;
+}
+
+.typewriter p:nth-child(2) {
+  width: 15.3em;
+  opacity: 0;
+  animation: type2 4s steps(40, end); /* Decreased from 6s to 4s */
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes type {
+  0% { width: 0; }
+  99.9% { border-right: .15em solid var(--primary-text-color); }
+  100% { border: none; }
+}
+
+@keyframes type2 {
+  0% { width: 0; }
+  1% { opacity: 1; }
+  99.9% { border-right: .15em solid var(--primary-text-color); }
+  100% { border: none; opacity: 1; }
+}
+
+@keyframes animated-cursor{
+  from{border-right-color: rgba(0,255,0,.75);}
+  to{border-right-color: transparent;}
+}
+.signup-continue-button,.signup-continue-button1{
+  color: var(--btn-txt-color)!important;
+  background: none;
+  border: 1px solid var(--btn-txt-color)!important;
+  border-radius: 6px;
+  box-shadow: none;
+  padding: 3px 12px ;
+}
+.form-register input{
+  color: var(--text-white)!important;
+}
+.confirm-button{
+  border: 1px solid green!important;
+  color: green!important;
+}
+/* Main Background End */
+
